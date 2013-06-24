@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:vipusauth="http://schemas.verisign.com/vip/2011/04/vipuserservices/auth" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:vipus="http://schemas.verisign.com/vip/2011/04/vipuserservices" name="VIPUserServices" targetNamespace="http://schemas.verisign.com/vip/2011/04/vipuserservices/auth">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="http://schemas.verisign.com/vip/2011/04/vipuserservices" schemaLocation="vipuserservices-1.1.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="AuthenticateUserRequest">
+		<wsdl:part name="AuthenticateUserRequest" element="vipus:AuthenticateUserRequest"/>
+	</wsdl:message>
+	<wsdl:message name="AuthenticateUserResponse">
+		<wsdl:part name="AuthenticateUserResponse" element="vipus:AuthenticateUserResponse"/>
+	</wsdl:message>
+	<wsdl:message name="EvaluateRiskRequest">
+	    <wsdl:part name="EvaluateRiskRequest" element="vipus:EvaluateRiskRequest"/>
+	</wsdl:message>
+	<wsdl:message name="EvaluateRiskResponse">
+	    <wsdl:part name="EvaluateRiskResponse" element="vipus:EvaluateRiskResponse"/>
+	</wsdl:message>	
+	<wsdl:message name="ConfirmRiskRequest">
+	    <wsdl:part name="ConfirmRiskRequest" element="vipus:ConfirmRiskRequest" />
+	</wsdl:message>
+	<wsdl:message name="ConfirmRiskResponse">
+	    <wsdl:part name="ConfirmRiskResponse" element="vipus:ConfirmRiskResponse" />
+	</wsdl:message>
+	<wsdl:message name="DenyRiskRequest">
+	    <wsdl:part name="DenyRiskRequest" element="vipus:DenyRiskRequest" />
+	</wsdl:message>
+	<wsdl:message name="DenyRiskResponse">
+	    <wsdl:part name="DenyRiskResponse" element="vipus:DenyRiskResponse" />
+	</wsdl:message>		
+	<wsdl:message name="EvaluateNonMonetaryTransactionRiskRequest">
+	    <wsdl:part name="EvaluateNonMonetaryTransactionRiskRequest" element="vipus:EvaluateNonMonetaryTransactionRiskRequest"/>
+	</wsdl:message>
+	<wsdl:message name="EvaluateNonMonetaryTransactionRiskResponse">
+	    <wsdl:part name="EvaluateNonMonetaryTransactionRiskResponse" element="vipus:EvaluateNonMonetaryTransactionRiskResponse"/>
+	</wsdl:message>	
+	<wsdl:message name="EvaluateMonetaryTransactionRiskRequest">
+	    <wsdl:part name="EvaluateMonetaryTransactionRiskRequest" element="vipus:EvaluateMonetaryTransactionRiskRequest"/>
+	</wsdl:message>
+	<wsdl:message name="EvaluateMonetaryTransactionRiskResponse">
+	    <wsdl:part name="EvaluateMonetaryTransactionRiskResponse" element="vipus:EvaluateMonetaryTransactionRiskResponse"/>
+	</wsdl:message>		
+	<wsdl:message name="ConfirmTransactionRiskRequest">
+	    <wsdl:part name="ConfirmTransactionRiskRequest" element="vipus:ConfirmTransactionRiskRequest" />
+	</wsdl:message>
+	<wsdl:message name="ConfirmTransactionRiskResponse">
+	    <wsdl:part name="ConfirmTransactionRiskResponse" element="vipus:ConfirmTransactionRiskResponse" />
+	</wsdl:message>
+	<wsdl:message name="DenyTransactionRiskRequest">
+	    <wsdl:part name="DenyTransactionRiskRequest" element="vipus:DenyTransactionRiskRequest" />
+	</wsdl:message>
+	<wsdl:message name="DenyTransactionRiskResponse">
+	    <wsdl:part name="DenyTransactionRiskResponse" element="vipus:DenyTransactionRiskResponse" />
+	</wsdl:message>				
+	<wsdl:portType name="AuthenticationServicePort">
+		<wsdl:operation name="authenticateUser">
+			<wsdl:input message="vipusauth:AuthenticateUserRequest"/>
+			<wsdl:output message="vipusauth:AuthenticateUserResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="evaluateRisk">
+			<wsdl:input message="vipusauth:EvaluateRiskRequest"/>
+			<wsdl:output message="vipusauth:EvaluateRiskResponse"/>
+		</wsdl:operation>	
+	    <wsdl:operation name="confirmRisk">
+	        <wsdl:input message="vipusauth:ConfirmRiskRequest"/>
+	        <wsdl:output message="vipusauth:ConfirmRiskResponse"/>
+	    </wsdl:operation>    
+	    <wsdl:operation name="denyRisk">
+	        <wsdl:input message="vipusauth:DenyRiskRequest"/>
+	        <wsdl:output message="vipusauth:DenyRiskResponse"/>    
+	    </wsdl:operation> 
+		<wsdl:operation name="evaluateNonMonetaryTransactionRisk">
+			<wsdl:input message="vipusauth:EvaluateNonMonetaryTransactionRiskRequest"/>
+			<wsdl:output message="vipusauth:EvaluateNonMonetaryTransactionRiskResponse"/>
+		</wsdl:operation>	
+		<wsdl:operation name="evaluateMonetaryTransactionRisk">
+			<wsdl:input message="vipusauth:EvaluateMonetaryTransactionRiskRequest"/>
+			<wsdl:output message="vipusauth:EvaluateMonetaryTransactionRiskResponse"/>
+		</wsdl:operation>		
+	    <wsdl:operation name="confirmTransactionRisk">
+	        <wsdl:input message="vipusauth:ConfirmTransactionRiskRequest"/>
+	        <wsdl:output message="vipusauth:ConfirmTransactionRiskResponse"/>
+	    </wsdl:operation>    
+	    <wsdl:operation name="denyTransactionRisk">
+	        <wsdl:input message="vipusauth:DenyTransactionRiskRequest"/>
+	        <wsdl:output message="vipusauth:DenyTransactionRiskResponse"/>    
+	    </wsdl:operation> 				           				
+	</wsdl:portType>	
+	<wsdl:binding name="AuthenticationServiceSoapBinding" type="vipusauth:AuthenticationServicePort">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="authenticateUser">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="evaluateRisk">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</wsdl:output>
+		</wsdl:operation>		
+	    <wsdl:operation name="confirmRisk">
+	      	<soap:operation soapAction="" style="document"/>
+	      	<wsdl:input>
+	        	<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+	      	</wsdl:input>
+	      	<wsdl:output>
+	        	<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+	      	</wsdl:output>
+	    </wsdl:operation>    
+	    <wsdl:operation name="denyRisk">
+	      	<soap:operation soapAction="" style="document"/>
+	      	<wsdl:input>
+	        	<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+	      	</wsdl:input>
+	      	<wsdl:output>
+	        	<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+	      	</wsdl:output>  
+	    </wsdl:operation>
+		<wsdl:operation name="evaluateNonMonetaryTransactionRisk">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</wsdl:output>
+		</wsdl:operation>	
+		<wsdl:operation name="evaluateMonetaryTransactionRisk">
+			<soap:operation soapAction=""/>
+			<wsdl:input>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+			</wsdl:output>
+		</wsdl:operation>	
+	    <wsdl:operation name="confirmTransactionRisk">
+	      	<soap:operation soapAction="" style="document"/>
+	      	<wsdl:input>
+	        	<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+	      	</wsdl:input>
+	      	<wsdl:output>
+	        	<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+	      	</wsdl:output>
+	    </wsdl:operation>    
+	    <wsdl:operation name="denyTransactionRisk">
+	      	<soap:operation soapAction="" style="document"/>
+	      	<wsdl:input>
+	        	<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+	      	</wsdl:input>
+	      	<wsdl:output>
+	        	<soap:body use="literal" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+	      	</wsdl:output>  
+	    </wsdl:operation>					        			
+	</wsdl:binding>
+	<wsdl:service name="AuthenticationService">
+		<wsdl:port name="AuthenticationServicePort" binding="vipusauth:AuthenticationServiceSoapBinding">
+			<soap:address location="https://vipuserservices-auth.verisign.com/vipuserservices/AuthenticationService_1_1"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
